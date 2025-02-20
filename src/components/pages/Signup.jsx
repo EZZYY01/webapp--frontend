@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { registerUser } from "../../../api/api.js"; // Import API function
+import { registerUser } from "../../api/api.js"; // Import API function
 
 const Signup = () => {
     const [formData, setFormData] = useState({
