@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 store/
-src/pages/admin-view/
+
 
 src/components/admin-view/
 src/components/auth/
