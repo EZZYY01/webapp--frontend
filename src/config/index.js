@@ -58,11 +58,11 @@ export const addProductFormElements = [
     name: "category",
     componentType: "select",
     options: [
-      { id: "men", label: "Men" },
-      { id: "women", label: "Women" },
-      { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
+      { id: "StringBased Instruments", label: "StringBased Instruments" },
+      { id: "Percussion Instruments", label: "Percussion Instruments" },
+      { id: "Wind Instruments", label: "Wind Instruments" },
+      { id: "Keyboards & Pianos", label: "Keyboards & Pianos" },
+      { id: "Electronic Instruments", label: "Electronic Instruments" },
     ],
   },
   {
@@ -70,12 +70,12 @@ export const addProductFormElements = [
     name: "brand",
     componentType: "select",
     options: [
-      { id: "nike", label: "Nike" },
-      { id: "adidas", label: "Adidas" },
-      { id: "puma", label: "Puma" },
-      { id: "levi", label: "Levi's" },
-      { id: "zara", label: "Zara" },
-      { id: "h&m", label: "H&M" },
+      { id: "Yamaha", label: "Yamaha" },
+      { id: "Fender", label: "Fender" },
+      { id: "Roland", label: "Roland" },
+      { id: "Gibson", label: "Gibson" },
+      { id: "Pearl", label: "Pearl" },
+      { id: "Korg", label: "Korg" },
     ],
   },
   {
@@ -113,28 +113,28 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "men",
-    label: "Men",
+    id: "StringBased Instruments",
+    label: "StringBased Instruments",
     path: "/shop/listing",
   },
   {
-    id: "women",
-    label: "Women",
+    id: "Percussion Instruments",
+    label: "Percussion Instruments",
     path: "/shop/listing",
   },
   {
-    id: "kids",
-    label: "Kids",
+    id: "Wind Instruments",
+    label: "Wind Instruments",
     path: "/shop/listing",
   },
   {
-    id: "footwear",
-    label: "Footwear",
+    id: "Electronic Instruments",
+    label: "Electronic Instruments",
     path: "/shop/listing",
   },
   {
-    id: "accessories",
-    label: "Accessories",
+    id: "Keyboards & Pianos",
+    label: "Keyboards & Pianos",
     path: "/shop/listing",
   },
   {
@@ -145,37 +145,37 @@ export const shoppingViewHeaderMenuItems = [
 ];
 
 export const categoryOptionsMap = {
-  men: "Men",
-  women: "Women",
-  kids: "Kids",
-  accessories: "Accessories",
-  footwear: "Footwear",
+  "StringBased Instruments": "StringBased Instruments",
+  "Percussion Instruments": "Percussion Instruments",
+  "Wind Instruments": "Wind Instruments",
+  "Keyboards & Pianos": "Keyboards & Pianos",
+  "Electronic Instruments": "Electronic Instruments",
 };
 
 export const brandOptionsMap = {
-  nike: "Nike",
-  adidas: "Adidas",
-  puma: "Puma",
-  levi: "Levi",
-  zara: "Zara",
-  "h&m": "H&M",
+  Yamaha: "Yamaha",
+  Fender: "Fender",
+  Roland: "Roland",
+  Gibson: "Gibson",
+  Pearl: "Pearl",
+  "Korg": "Korg",
 };
 
 export const filterOptions = {
   category: [
-    { id: "men", label: "Men" },
-    { id: "women", label: "Women" },
-    { id: "kids", label: "Kids" },
-    { id: "accessories", label: "Accessories" },
-    { id: "footwear", label: "Footwear" },
+    { id: "StringBased Instruments", label: "StringBased Instruments" },
+    { id: "Percussion Instruments", label: "Percussion Instruments" },
+    { id: "Wind Instruments", label: "Wind Instruments" },
+    { id: "Keyboards & Pianos", label: "Keyboards & Pianos" },
+    { id: "Electronic Instruments", label: "Electronic Instruments" },
   ],
   brand: [
-    { id: "nike", label: "Nike" },
-    { id: "adidas", label: "Adidas" },
-    { id: "puma", label: "Puma" },
-    { id: "levi", label: "Levi's" },
-    { id: "zara", label: "Zara" },
-    { id: "h&m", label: "H&M" },
+    { id: "Yamaha", label: "Yamaha" },
+    { id: "Fender", label: "Fender" },
+    { id: "Roland", label: "Roland" },
+    { id: "Gibson", label: "Gibson" },
+    { id: "Pearl", label: "Pearl" },
+    { id: "Korg", label: "Korg" },
   ],
 };
 

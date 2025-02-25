@@ -10,39 +10,29 @@ import {
   fetchProductDetails,
 } from "@/store/shop/products-slice";
 import {
-  Airplay,
-  BabyIcon,
   ChevronLeftIcon,
-  ChevronRightIcon,
-  CloudLightning,
-  Heater,
-  Images,
-  Shirt,
-  ShirtIcon,
-  ShoppingBasket,
-  UmbrellaIcon,
-  WashingMachine,
-  WatchIcon,
+  ChevronRightIcon
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { FaDrum, FaFire, FaGuitar, FaImage, FaKeyboard, FaPlug, FaWind } from 'react-icons/fa';
+import { IoIosShirt } from 'react-icons/io';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
 const categoriesWithIcon = [
-  { id: "men", label: "Men", icon: ShirtIcon },
-  { id: "women", label: "Women", icon: CloudLightning },
-  { id: "kids", label: "Kids", icon: BabyIcon },
-  { id: "accessories", label: "Accessories", icon: WatchIcon },
-  { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
+  { id: "StringBased Instruments", label: "StringBased Instruments", icon: <FaGuitar /> },
+  { id: "Percussion Instruments", label: "Percussion Instruments", icon: <FaDrum /> },
+  { id: "Wind Instruments", label: "Wind Instruments", icon: <FaWind /> },
+  { id: "Keyboards & Pianos", label: "Keyboards & Pianos", icon: <FaKeyboard /> },
+  { id: "Electronic Instruments", label: "Electronic Instruments", icon: <FaPlug /> },
 ];
 
 const brandsWithIcon = [
-  { id: "nike", label: "Nike", icon: Shirt },
-  { id: "adidas", label: "Adidas", icon: WashingMachine },
-  { id: "puma", label: "Puma", icon: ShoppingBasket },
-  { id: "levi", label: "Levi's", icon: Airplay },
-  { id: "zara", label: "Zara", icon: Images },
-  { id: "h&m", label: "H&M", icon: Heater },
+  { id: "Yamaha", label: "Yamaha", icon: <IoIosShirt /> },
+  { id: "Fender", label: "Fender", icon: <FaGuitar /> },
+  { id: "Roland", label: "Roland", icon: <FaFire /> },
+  { id: "Gibson", label: "Gibson", icon: <FaGuitar /> },
+  { id: "Pearl", label: "Pearl", icon: <FaImage /> },
+  { id: "Korg", label: "Korg", icon: <FaFire /> },
 ];
 function ShoppingHome() {
   const [currentSlide, setCurrentSlide] = useState(0);

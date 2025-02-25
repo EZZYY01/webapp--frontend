@@ -1,12 +1,10 @@
 import Address from "@/components/shopping-view/address";
-import img from "../../assets/account.jpg";
-import { useDispatch, useSelector } from "react-redux";
 import UserCartItemsContent from "@/components/shopping-view/cart-items-content";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { createNewOrder } from "@/store/shop/order-slice";
-import { Navigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
+import { createNewOrder } from "@/store/shop/order-slice";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function ShoppingCheckout() {
   const { cartItems } = useSelector((state) => state.shopCart);
@@ -22,14 +20,14 @@ function ShoppingCheckout() {
   const totalCartAmount =
     cartItems && cartItems.items && cartItems.items.length > 0
       ? cartItems.items.reduce(
-          (sum, currentItem) =>
-            sum +
-            (currentItem?.salePrice > 0
-              ? currentItem?.salePrice
-              : currentItem?.price) *
-              currentItem?.quantity,
-          0
-        )
+        (sum, currentItem) =>
+          sum +
+          (currentItem?.salePrice > 0
+            ? currentItem?.salePrice
+            : currentItem?.price) *
+          currentItem?.quantity,
+        0
+      )
       : 0;
 
   function handleInitiatePaypalPayment() {
@@ -108,8 +106,8 @@ function ShoppingCheckout() {
         <div className="flex flex-col gap-4">
           {cartItems && cartItems.items && cartItems.items.length > 0
             ? cartItems.items.map((item) => (
-                <UserCartItemsContent cartItem={item} />
-              ))
+              <UserCartItemsContent cartItem={item} />
+            ))
             : null}
           <div className="mt-8 space-y-4">
             <div className="flex justify-between">
