@@ -18,6 +18,7 @@ import { FaDrum, FaFire, FaGuitar, FaImage, FaKeyboard, FaPlug, FaWind } from 'r
 import { IoIosShirt } from 'react-icons/io';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
 const categoriesWithIcon = [
   { id: "StringBased Instruments", label: "StringBased Instruments", icon: <FaGuitar /> },
   { id: "Percussion Instruments", label: "Percussion Instruments", icon: <FaDrum /> },
@@ -34,6 +35,7 @@ const brandsWithIcon = [
   { id: "Pearl", label: "Pearl", icon: <FaImage /> },
   { id: "Korg", label: "Korg", icon: <FaFire /> },
 ];
+
 function ShoppingHome() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { productList, productDetails } = useSelector(
@@ -126,8 +128,7 @@ function ShoppingHome() {
           onClick={() =>
             setCurrentSlide(
               (prevSlide) =>
-                (prevSlide - 1 + featureImageList.length) %
-                featureImageList.length
+                (prevSlide - 1 + featureImageList.length) % featureImageList.length
             )
           }
           className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80"
@@ -147,6 +148,7 @@ function ShoppingHome() {
           <ChevronRightIcon className="w-4 h-4" />
         </Button>
       </div>
+
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
@@ -155,13 +157,14 @@ function ShoppingHome() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {categoriesWithIcon.map((categoryItem) => (
               <Card
+                key={categoryItem.id}
                 onClick={() =>
                   handleNavigateToListingPage(categoryItem, "category")
                 }
                 className="cursor-pointer hover:shadow-lg transition-shadow"
               >
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  <categoryItem.icon className="w-12 h-12 mb-4 text-primary" />
+                  {categoryItem.icon} {/* Render icon here */}
                   <span className="font-bold">{categoryItem.label}</span>
                 </CardContent>
               </Card>
@@ -176,11 +179,12 @@ function ShoppingHome() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {brandsWithIcon.map((brandItem) => (
               <Card
+                key={brandItem.id}
                 onClick={() => handleNavigateToListingPage(brandItem, "brand")}
                 className="cursor-pointer hover:shadow-lg transition-shadow"
               >
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  <brandItem.icon className="w-12 h-12 mb-4 text-primary" />
+                  {brandItem.icon} {/* Render icon here */}
                   <span className="font-bold">{brandItem.label}</span>
                 </CardContent>
               </Card>
@@ -198,6 +202,7 @@ function ShoppingHome() {
             {productList && productList.length > 0
               ? productList.map((productItem) => (
                 <ShoppingProductTile
+                  key={productItem.id}
                   handleGetProductDetails={handleGetProductDetails}
                   product={productItem}
                   handleAddtoCart={handleAddtoCart}
@@ -207,6 +212,7 @@ function ShoppingHome() {
           </div>
         </div>
       </section>
+
       <ProductDetailsDialog
         open={openDetailsDialog}
         setOpen={setOpenDetailsDialog}
