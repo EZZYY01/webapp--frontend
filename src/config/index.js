@@ -113,29 +113,14 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "StringBased Instruments",
-    label: "StringBased Instruments",
+    id: "categories",
+    label: "Categories",
     path: "/shop/listing",
   },
   {
-    id: "Percussion Instruments",
-    label: "Percussion Instruments",
-    path: "/shop/listing",
-  },
-  {
-    id: "Wind Instruments",
-    label: "Wind Instruments",
-    path: "/shop/listing",
-  },
-  {
-    id: "Electronic Instruments",
-    label: "Electronic Instruments",
-    path: "/shop/listing",
-  },
-  {
-    id: "Keyboards & Pianos",
-    label: "Keyboards & Pianos",
-    path: "/shop/listing",
+    id: "Aboutus",
+    label: "About Us",
+    path: "/about",
   },
   {
     id: "search",

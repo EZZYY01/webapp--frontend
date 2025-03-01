@@ -6,6 +6,7 @@ import AdminLayout from "./components/admin-view/layout";
 import AuthLayout from "./components/auth/layout";
 import CheckAuth from "./components/common/check-auth";
 import ShoppingLayout from "./components/shopping-view/layout";
+import AboutUs from "./pages/aboutus/aboutus";
 import AdminDashboard from "./pages/admin-view/dashboard";
 import AdminFeatures from "./pages/admin-view/features";
 import AdminOrders from "./pages/admin-view/orders";
@@ -88,7 +89,9 @@ function App() {
           <Route path="paypal-return" element={<PaypalReturnPage />} />
           <Route path="payment-success" element={<PaymentSuccessPage />} />
           <Route path="search" element={<SearchProducts />} />
+
         </Route>
+        <Route path="about" element={<AboutUs />} />
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

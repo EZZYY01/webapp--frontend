@@ -34,6 +34,7 @@ function MenuItems() {
     const currentFilter =
       getCurrentMenuItem.id !== "home" &&
         getCurrentMenuItem.id !== "products" &&
+        getCurrentMenuItem.id !== "about" &&
         getCurrentMenuItem.id !== "search"
         ? {
           category: [getCurrentMenuItem.id],

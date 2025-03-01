@@ -42,11 +42,8 @@ function ShoppingHome() {
     (state) => state.shopProducts
   );
   const { featureImageList } = useSelector((state) => state.commonFeature);
-
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
-
   const { user } = useSelector((state) => state.auth);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -56,7 +53,6 @@ function ShoppingHome() {
     const currentFilter = {
       [section]: [getCurrentItem.id],
     };
-
     sessionStorage.setItem("filters", JSON.stringify(currentFilter));
     navigate(`/shop/listing`);
   }
@@ -89,8 +85,7 @@ function ShoppingHome() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % featureImageList.length);
-    }, 15002);
-
+    }, 3000);
     return () => clearInterval(timer);
   }, [featureImageList]);
 
@@ -102,8 +97,6 @@ function ShoppingHome() {
       })
     );
   }, [dispatch]);
-
-  console.log(productList, "productList");
 
   useEffect(() => {
     dispatch(getFeatureImages());
@@ -151,9 +144,7 @@ function ShoppingHome() {
 
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Shop by category
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Shop by Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {categoriesWithIcon.map((categoryItem) => (
               <Card
@@ -164,7 +155,7 @@ function ShoppingHome() {
                 className="cursor-pointer hover:shadow-lg transition-shadow"
               >
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  {categoryItem.icon} {/* Render icon here */}
+                  {categoryItem.icon}
                   <span className="font-bold">{categoryItem.label}</span>
                 </CardContent>
               </Card>
@@ -184,7 +175,7 @@ function ShoppingHome() {
                 className="cursor-pointer hover:shadow-lg transition-shadow"
               >
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  {brandItem.icon} {/* Render icon here */}
+                  {brandItem.icon}
                   <span className="font-bold">{brandItem.label}</span>
                 </CardContent>
               </Card>
@@ -196,7 +187,7 @@ function ShoppingHome() {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
-            Feature Products
+            Featured Products
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {productList && productList.length > 0
@@ -218,6 +209,72 @@ function ShoppingHome() {
         setOpen={setOpenDetailsDialog}
         productDetails={productDetails}
       />
+
+      <footer className="mt-auto py-8 bg-gray-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">SoundSage Store</h3>
+              <p className="text-gray-400 text-sm">
+                Your one-stop shop for all musical instruments and accessories.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a href="/shop/listing" className="text-gray-400 hover:text-white transition-colors">
+                    Shop
+                  </a>
+                </li>
+                <li>
+                  <a href="/about" className="text-gray-400 hover:text-white transition-colors">
+                    About Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Categories */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Categories</h3>
+              <ul className="space-y-2 text-sm">
+                {categoriesWithIcon.slice(0, 3).map((category) => (
+                  <li key={category.id}>
+                    <button
+                      onClick={() => handleNavigateToListingPage(category, "category")}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {category.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>Email: support@soundsagenp.np</li>
+                <li>Phone: (977) 123-456789</li>
+                <li>Address: 123 Music Store, SoundSage City</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <p>© {new Date().getFullYear()} SoundSage Store. All rights reserved.</p>
+            <div className="mt-4 md:mt-0">
+              <a href="" className="hover:text-white mx-2">Thanks For Visiting Us</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
