@@ -1,7 +1,7 @@
 import { shoppingViewHeaderMenuItems } from "@/config";
 import { logoutUser } from "@/store/auth-slice";
 import { fetchCartItems } from "@/store/shop/cart-slice/cartslice";
-import { HousePlug, LogOut, Menu, ShoppingCart, UserCog } from "lucide-react";
+import { LogOut, Menu, ShoppingCart, UserCog } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,6 +10,7 @@ import {
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
+import img1 from "../../../public/vite.svg";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { Button } from "../ui/button";
 import {
@@ -140,7 +141,7 @@ function ShoppingHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/shop/home" className="flex items-center gap-2">
-          <HousePlug className="h-6 w-6" />
+          <img src={img1} alt="SoundSage" className="h-6 w-6" />
           <span className="font-bold">SoundSage</span>
         </Link>
         <Sheet>

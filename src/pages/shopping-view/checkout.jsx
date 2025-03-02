@@ -6,6 +6,7 @@ import { createNewOrder } from "@/store/shop/order-slice/orderslice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+
 function ShoppingCheckout() {
   const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
@@ -95,9 +96,7 @@ function ShoppingCheckout() {
 
   return (
     <div className="flex flex-col">
-      <div className="relative h-[300px] w-full overflow-hidden">
-        <img src={img} className="h-full w-full object-cover object-center" />
-      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 p-5">
         <Address
           selectedId={currentSelectedAddress}
