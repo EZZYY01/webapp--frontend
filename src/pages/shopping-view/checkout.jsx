@@ -2,7 +2,7 @@ import Address from "@/components/shopping-view/address";
 import UserCartItemsContent from "@/components/shopping-view/cart-items-content";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { createNewOrder } from "@/store/shop/order-slice";
+import { createNewOrder } from "@/store/shop/order-slice/orderslice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 

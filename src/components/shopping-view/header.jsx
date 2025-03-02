@@ -1,6 +1,6 @@
 import { shoppingViewHeaderMenuItems } from "@/config";
 import { logoutUser } from "@/store/auth-slice";
-import { fetchCartItems } from "@/store/shop/cart-slice";
+import { fetchCartItems } from "@/store/shop/cart-slice/cartslice";
 import { HousePlug, LogOut, Menu, ShoppingCart, UserCog } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

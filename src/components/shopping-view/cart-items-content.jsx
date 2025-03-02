@@ -1,4 +1,4 @@
-import { deleteCartItem, updateCartQuantity } from "@/store/shop/cart-slice";
+import { deleteCartItem, updateCartQuantity } from "@/store/shop/cart-slice/cartslice";
 import { Minus, Plus, Trash } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../ui/button";

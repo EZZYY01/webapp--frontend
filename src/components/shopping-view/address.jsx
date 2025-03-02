@@ -4,7 +4,7 @@ import {
   deleteAddress,
   editaAddress,
   fetchAllAddresses,
-} from "@/store/shop/address-slice";
+} from "@/store/shop/address-slice/addresslice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CommonForm from "../common/form";

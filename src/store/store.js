@@ -4,12 +4,12 @@ import adminProductsSlice from "./admin/products-slice";
 import authReducer from "./auth-slice";
 
 import commonFeatureSlice from "./common-slice";
-import shopAddressSlice from "./shop/address-slice";
-import shopCartSlice from "./shop/cart-slice";
-import shopOrderSlice from "./shop/order-slice";
-import shopProductsSlice from "./shop/products-slice";
+import shopAddressSlice from "./shop/address-slice/addresslice";
+import shopCartSlice from "./shop/cart-slice/cartslice";
+import shopOrderSlice from "./shop/order-slice/orderslice";
+import shopProductsSlice from "./shop/products-slice/productslice";
 import rentReducer from "./shop/rent-slice"; // Import rentReducer
-import shopReviewSlice from "./shop/review-slice";
+import shopReviewSlice from "./shop/review-slice/reviewslice";
 import shopSearchSlice from "./shop/search-slice";
 
 const store = configureStore({

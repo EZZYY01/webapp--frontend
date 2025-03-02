@@ -71,10 +71,10 @@ function AdminOrderDetailsView({ orderDetails }) {
             <Label>
               <Badge
                 className={`py-1 px-3 ${orderDetails?.orderStatus === "confirmed"
-                    ? "bg-green-500"
-                    : orderDetails?.orderStatus === "rejected"
-                      ? "bg-red-600"
-                      : "bg-black"
+                  ? "bg-green-500"
+                  : orderDetails?.orderStatus === "rejected"
+                    ? "bg-red-600"
+                    : "bg-black"
                   }`}
               >
                 {orderDetails?.orderStatus}
@@ -92,7 +92,7 @@ function AdminOrderDetailsView({ orderDetails }) {
                   <li className="flex items-center justify-between">
                     <span>Title: {item.title}</span>
                     <span>Quantity: {item.quantity}</span>
-                    <span>Price: ${item.price}</span>
+                    <span>Price: NRS.{item.price}</span>
                   </li>
                 ))
                 : null}

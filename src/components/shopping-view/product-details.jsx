@@ -1,6 +1,6 @@
-import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
-import { setProductDetails } from "@/store/shop/products-slice";
-import { addReview, getReviews } from "@/store/shop/review-slice";
+import { addToCart, fetchCartItems } from "@/store/shop/cart-slice/cartslice";
+import { setProductDetails } from "@/store/shop/products-slice/productslice";
+import { addReview, getReviews } from "@/store/shop/review-slice/reviewslice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import StarRatingComponent from "../common/star-rating";

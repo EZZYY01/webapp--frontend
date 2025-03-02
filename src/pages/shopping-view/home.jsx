@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 import { getFeatureImages } from "@/store/common-slice";
-import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
+import { addToCart, fetchCartItems } from "@/store/shop/cart-slice/cartslice";
 import {
   fetchAllFilteredProducts,
   fetchProductDetails,
-} from "@/store/shop/products-slice";
+} from "@/store/shop/products-slice/productslice";
 import {
   ChevronLeftIcon,
   ChevronRightIcon

@@ -2,7 +2,7 @@ import {
   getAllOrdersByUserId,
   getOrderDetails,
   resetOrderDetails,
-} from "@/store/shop/order-slice";
+} from "@/store/shop/order-slice/orderslice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Badge } from "../ui/badge";
@@ -66,10 +66,10 @@ function ShoppingOrders() {
                   <TableCell>
                     <Badge
                       className={`py-1 px-3 ${orderItem?.orderStatus === "confirmed"
-                          ? "bg-green-500"
-                          : orderItem?.orderStatus === "rejected"
-                            ? "bg-red-600"
-                            : "bg-black"
+                        ? "bg-green-500"
+                        : orderItem?.orderStatus === "rejected"
+                          ? "bg-red-600"
+                          : "bg-black"
                         }`}
                     >
                       {orderItem?.orderStatus}
